@@ -1,26 +1,218 @@
 {{>layout/header}}
 
-<h1>게시글 등록</h1>
+<script type="text/javascript">
 
-<div class="col-md-12">
-  <div class="col-md-4">
-    <form>
-      <div class="form-group">
-        <label for="title">제목</label>
-        <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+</script>
+<!-- end first section -->
+
+<script type="text/javascript">
+
+</script>
+
+
+<div class="container">
+  <h1>게시글 등록</h1>
+  <form>
+  <div class="row pt-5">
+      <div class="col-4">
+        <div class="card text-center">
+<!--          <img src="..." class="card-img-top" alt="...">-->
+          <div class="card-body">
+            <form>
+              <div id="content">
+                <h1 style="font-size: 1.5em; font-weight: bold;">메인 사진</h1>
+                <h6>메인으로 할 사진을 올려보세요</h6>
+                <input type="file" name="uploadFile" id="uploadFile" multiple>
+<!--                <div id="preview"></div>-->
+                <p><strong>결과 이미지</strong></p>
+                <img src="" id="result-image">
+              </div>
+              <button type="button" class="btn btn-primary" id="btn-save"></button>
+            </form>
+
+
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="author">작성자</label>
-        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
+
+      <div class="col-4">
+        <div class="card text-center">
+          <div class="card-body">
+
+                <h1 style="font-size: 1.9em; font-weight: bold;">Add</h1>
+                <h5>Drag and Drop 사진 또는 동영상</h5>
+                <br>
+
+                <!-- <div class="upload-btn-wrapper">
+                   <input type="file" id="input_file" multiple="multiple"
+                      style="height: 100%; height: 20%;">
+                   <button class="upload-btn">파일선택</button>
+                </div>
+                <br/> -->
+
+<!--                <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">-->
+
+                  <div id="dropZone"
+                       style="width: 100%; height: 100%; border: 2px dotted black; border-radius: 20px; margin-right: auto; margin-left: auto; margin-bottom: 15px;">
+                    <div id="fileDragDesc">파일을 드래그 해주세요.</div>
+
+
+                    <table id="fileListTable" width="100%" border="0px">
+                      <tbody id="fileTableTbody">
+                      </tbody>
+                    </table>
+                    <br>
+                  </div>
+
+<!--                </form>-->
+
+<!--                <form name="frmTitleAbout">-->
+                  <p style="font-size: 1.3em; text-align: left; margin-left: 15px;">제목:</p>
+                  <input type="text" id="video_name"
+                         placeholder="ex)South Korea Jeju HyubJae"
+                         style="width: 90%; height: 40px; margin-bottom: 10px;border: 2.2px solid rgb(171, 216, 251); border-radius: 15px; padding-left: 8px;"><br>
+
+                  <p style="font-size: 1.3em; text-align: left; margin-left: 15px;">상세 설명:</p>
+                  <input type="text" placeholder="ex) #Friends #4days #BMW"
+                         style="width: 90%; height: 94px; margin-bottom: 10px; border: 2.2px solid rgb(171, 216, 251); border-radius: 20px; padding-left: 8px;"><br>
+<!--                </form>-->
+
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="content">내용</label>
-        <input type="text" class="form-control" id="content" placeholder="내용을 입력하세요">
+
+      <div class="col-4">
+  <!--        -->
+        <div class="card text-center">
+          <div class="card-body">
+
+                <h1 style="font-size: 1.9em; font-weight: bold;">여행</h1>
+
+<!--                <form name="form" class="frmselect" method="post" action="">-->
+                  <input type="hidden" name="mainView" value="">
+                  <input type="hidden" name="photosNvideos" value="">
+
+                  <br> 여행 일정표<input type="date"
+                                 style="width: 250px; height: 37px; margin-left: 8px; border-radius: 8px; margin-bottom: 15px;"><br>
+                  <select
+                      style="width: 45px; height: 37px; border-radius: 8px; margin-right: 8px; margin-bottom: 15px;
+                          border: 2px solid rgb(171, 216, 251);">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>그 외</option>
+                  </select>night(s) <select id="video_kindof_days" name=""
+                                            style="width: 45px; height: 37px; border-radius: 8px; margin-left: 8px; margin-right: 8px; margin-bottom: 15px;
+                                                  border: 2px solid rgb(171, 216, 251);">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>그 외</option>
+                </select>days<br> 나라 <select id="video_kindof_country"
+                                                        style="width: 140px; height: 37px; border-radius: 8px; margin-bottom: 15px;
+                                            border: 2px solid rgb(171, 216, 251);">
+                  <option>미국</option>
+                  <option>캐나다</option>
+                  <option>일본</option>
+                  <option>중국</option>
+                  <option>베트남</option>
+                  <option>필리핀</option>
+                  <option>인도네시아</option>
+                  <option>칠레</option>
+                  <option>그외</option>
+                </select><br> What City? <input id="video_kindof_city" type="text"
+                                                style="width: 130px; height: 37px; border-radius: 8px; margin-bottom: 15px;
+                                      border: 2px solid rgb(171, 216, 251);"><br>
+
+                  누구랑? <select id="video_kindof_with"
+                                     style="width: 75px; height: 37px; border-radius: 8px; margin-bottom: 15px;
+                                     border: 2px solid rgb(171, 216, 251);">
+                  <option selected>With</option>
+                  <option>혼자</option>
+                  <option>가족</option>
+                  <option>친구</option>
+                  <option>연인</option>
+                  <option>직장</option>
+                </select><br> 날씨 <select id="video_kindof_weather"
+                                              style="width: 120px; height: 37px; border-radius: 8px; margin-bottom: 15px;
+                                      border: 2px solid rgb(171, 216, 251);">
+                  <option selected>Temp</option>
+                  <option>-10~5</option>
+                  <option>5~10</option>
+                  <option>10~15</option>
+                  <option>15~20</option>
+                  <option>20~25</option>
+                  <option>25~30</option>
+                  <option>30~</option>
+                </select>"C <select id="video_kindof_weather2"
+                                    style="width: 130px; height: 37px; border-radius: 8px; margin-bottom: 15px;
+                                    border: 2.2px solid rgb(171, 216, 251);">
+                  <option selected>상세 날씨</option>
+                  <option>패딩필수</option>
+                  <option>코트필수</option>
+                  <option>대체로 덜추움</option>
+                  <option>봄날씨</option>
+                  <option>초여름</option>
+                  <option>완전 여름</option>
+                  <option>열대우림</option>
+                </select><br> 몇박 몇일? <input id="video_numberof_course"
+                                                         type="text"
+                                                         style="width: 75px; height: 37px; border-radius: 8px; margin-bottom: 15px;
+                                              border: 2px solid rgb(171, 216, 251);"><br>
+
+                  예산 <input id="video_numberof_budget" type="text"
+                                style="width: 150px; height: 37px; border-radius: 8px; margin-bottom: 15px;
+                                border: 2px solid rgb(171, 216, 251);">
+                  <select id="video_unitof_currency"
+                          style="width: 150px; height: 37px; border-radius: 8px; margin-bottom: 15px;
+                          border: 2.2px solid rgb(171, 216, 251);">
+                    <option selected>화폐 종류</option>
+                    <option>₩ KRW</option>
+                    <option>$ USD</option>
+                    <option>¥ JPN</option>
+                    <option>¥ YUAN</option>
+                    <option>€ EUR</option>
+                    <option>£ GBP</option>
+                  </select><br> Rate <select id="video_star"
+                                             style="width: 180px; height: 40px; border-radius: 10px; margin-bottom: 15px; border: 2.2px solid rgb(171, 216, 251);">
+                  <option>★</option>
+                  <option>★★</option>
+                  <option>★★★</option>
+                  <option>★★★★</option>
+                  <option>★★★★★</option>
+                </select><br> 여행은 좋았나요? <input id="video_bestplace" type="text"
+                                                 style="width: 150px; height: 37px; border-radius: 8px; margin-bottom: 15px; border: 2.2px solid rgb(171, 216, 251);">
+<!--                </form>-->
+
+<!--                <br> <input type="button" value="Submit" onClick="twoSubmit()"-->
+<!--                            style="height: 35px; float: right; text-align: left; border-radius: 10px; margin-bottom: 15px;">-->
+          </div>
+        </div>
       </div>
-    </form>
-    <a href="/" role="button" class="btn btn-secondary">취소</a>
-    <button type="button" class="btn btn-primary" id="btn-save">등록</button>
-  </div>
-</div>
+
+      <!--      <div class="form-group">-->
+      <!--        <label for="title">제목</label>-->
+      <!--        <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">-->
+      <!--      </div>-->
+      <!--      <div class="form-group">-->
+      <!--        <label for="author">작성자</label>-->
+      <!--        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">-->
+      <!--      </div>-->
+      <!--      <div class="form-group">-->
+      <!--        <label for="content">내용</label>-->
+      <!--        <input type="text" class="form-control" id="content" placeholder="내용을 입력하세요">-->
+      <!--      </div>-->
+  </form>
+  <a href="/posts" role="button" class="btn btn-secondary">취소</a>
+  <button type="button" class="btn btn-primary" id="btn-save">등록</button>
 
 {{>layout/footer}}

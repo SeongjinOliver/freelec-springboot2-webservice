@@ -7,7 +7,6 @@ import com.jojoldu.book.springboot.web.dto.PostsUpdateRequestDto;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
-import net.bytebuddy.asm.Advice.OffsetMapping.Target.ForVariable.ReadOnly;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

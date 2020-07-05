@@ -1,0 +1,149 @@
+header {
+  text-align : center;
+  height : 120px;
+  postion : relative;
+  font-size: 20px;
+}
+
+header > .get-plan{
+  font-size : 20px;
+  border-radius: 15px 15px 15px 5px;
+  background: #aaf0d1;;
+  text-align:center;
+  width:170px;
+  height:40px;
+  margin: 0 20px;
+  display: inline-block;
+  postion : relative;
+}
+header > div > p{
+  padding-bottom:5px;
+  font-size: 20px;
+}
+
+header > #starter{
+  top : 50px;
+  background:#1313CD;
+}
+header > #starter > p{
+  color:white;
+}
+header > #search-plan{
+  top : 30px;
+}
+header > #get-your-plan{
+  top : 10px;
+}
+header > #make{
+  top : 30px;
+}
+header > #complete{
+  top : 50px;
+}
+
+div.get-plan {
+  position: relative;
+  display: inline-block;
+  /* 	border-bottom: 1px dotted black; */
+}
+
+.get-plan .tooltiptext {
+  width: 80px;
+  height: auto;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 20px;
+}
+
+.get-plan .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+
+}
+
+.get-plan:hover .tooltiptext {
+  font-size: 20px;
+  opacity: 1;
+}
+
+section {
+  width:70%;
+  height:450px;
+  background:#fff;
+  padding:3px;
+  float:left;
+}
+article > .title{
+  margin-left:30px;
+  width:80%;
+}
+article > .left-title{
+  font-size: 30px;
+  padding-left:30px;
+  width:100px;
+  /* 	height:auto; */
+  /* 	float:left; */
+}
+article > .main-title{
+  font-size: 30px;
+  padding-left:30px;
+  width:900px;
+  /* 	float:left; */
+}
+
+aside {
+  width:30%;
+  height:450px;
+  background:#fff;
+  float:right;
+  color:purple;
+  text-align:center;
+
+  line-height:450px;
+}   /* 우측정렬, h2를 가로,세로 모두 가운데정렬 */
+
+div{
+  margin: 0;
+  padding: 0;
+}
+
+/*.container {*/
+/*  display:flex;*/
+/*  flex-direction: row;*/
+/*  flex-wrap: wrap;*/
+/*  width:70%;*/
+/*  margin-top:20px;*/
+/*  !* flex-flow: row wrap;*!*/
+/*  !* background-color:#eee;*/
+/*  border:1px solid #222; *!*/
+/*}*/
+.box {
+  width:100px;
+  height:50px;
+  margin:5px;
+  background-color:#222;
+}
+p {
+  text-align: center;
+}
+.container2 {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

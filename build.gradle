@@ -26,6 +26,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.spring.io/libs-milestone'}
     jcenter()
 }
 
@@ -35,6 +36,29 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('com.h2database:h2')
     compile('org.springframework.boot:spring-boot-starter-mustache')
+    // 소셜 로그인 등 클라이언트 입장에서 소셜 기능 구현시 필요한 의존성입니다.
+    // spring-security-oauth2-client와 spring-security-oauth2-jose를 기본으로 관리해줍니다.
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+//    compile('org.springframework.session:spring-session-jdbc')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 //    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile('org.springframework.security:spring-security-test')
+
+    // sql 연동
+//    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2'
+//    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+//    compile 'mysql:mysql-connector-java'
+
+    //cloud
+    compile('org.springframework.cloud:spring-cloud-starter-aws')
+
+    // handlebars
+//    compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-aws:2.0.0.RC2'
+    }
 }

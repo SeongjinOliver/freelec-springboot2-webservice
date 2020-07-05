@@ -1,0 +1,18 @@
+
+header, body {
+  font-family: 'Jua', sans-serif;
+  font-weight: 700 !important;
+}
+
+.btn-sign-in {
+  background-color: #B4D6FB;
+  color: white;
+  border-color: darkblue;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.btn-sign-out {
+  color: #B4D6FB;
+  font-size: 0.7rem;
+}
